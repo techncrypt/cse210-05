@@ -34,3 +34,4 @@ root                    (project root folder)
 ## Authors
 ---
 * TODO: Add your name and email here
+  Kwadjo Owusu-Ansah Quarshie - qua21016@byui.edu
