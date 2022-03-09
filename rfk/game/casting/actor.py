@@ -1,3 +1,4 @@
+
 import constants
 from game.shared.color import Color
 from game.shared.point import Point
