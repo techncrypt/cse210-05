@@ -27,7 +27,6 @@ class DrawActorsAction(Action):
             script (Script): The script of Actions in the game.
         """
         score = cast.get_first_actor("scores")
-        food = cast.get_first_actor("foods")
         snake = cast.get_first_actor("snakes")
         cycle = cast.get_first_actor("cycle")   #second snake
         segments = snake.get_segments()
@@ -35,7 +34,6 @@ class DrawActorsAction(Action):
         messages = cast.get_actors("messages")
 
         self._video_service.clear_buffer()
-        self._video_service.draw_actor(food)
         self._video_service.draw_actors(segments)
         self._video_service.draw_actors(segments_2)  # second snake
         self._video_service.draw_actor(score)

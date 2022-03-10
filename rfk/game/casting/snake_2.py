@@ -11,7 +11,7 @@ class Snake_2(Snake):
     The responsibility of Snake is to move itself.
 
     Attributes:
-        _points (int): The number of points the food is worth.
+        _points (int): The number of points.
     """
     def grow_line(self, number_of_segments):
         for i in range(number_of_segments):
@@ -31,7 +31,7 @@ class Snake_2(Snake):
         x = int(constants.MAX_X / 4)
         y = int(constants.MAX_Y / 2)
 
-        position = Point(x * constants.CELL_SIZE, y)
+        position = Point(-x * constants.CELL_SIZE, y)
         velocity = Point(1 * constants.CELL_SIZE, 0)
         text = "8"
         color = constants.YELLOW
