@@ -19,14 +19,5 @@ class MoveActorsAction(Action):
         actors = cast.get_all_actors()
         for actor in actors:
             actor.move_next()
-
-    def execute_2(self, cast, script):
-        """Executes the move actors action.
-
-        Args:
-            cast (Cast): The cast of Actors in the game.
-            script (Script): The script of Actions in the game.
-        """
-        actors = cast.get_all_actors()
-        for actor in actors:
-            actor.move_next()
+        for snake in cast.get_actors("snakes"):
+            snake.grow_tail(1)
