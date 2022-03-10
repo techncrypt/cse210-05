@@ -80,3 +80,10 @@ class Point:
             Point: A new Point that is scaled.
         """
         return Point(self._x * factor, self._y * factor)
+    def copy(self):
+        """Returns a new point that has the same value as this point
+
+        Returns:
+            Point: A new point with the same values as this point
+        """
+        return Point(self._x, self._y)
