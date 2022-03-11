@@ -1,12 +1,10 @@
 import constants
 
 from game.casting.cast import Cast
+from game.casting.cycle import Cycle
 from game.casting.score import Score
-from game.casting.snake import Snake
-from game.casting.snake_2 import Snake_2
 from game.scripting.script import Script
-from game.scripting.control_actor1_action import ControlActor1Action
-from game.scripting.control_actor2_action import ControlActor2Action
+from game.scripting.control_actors_action import ControlActorsAction
 from game.scripting.move_actors_action import MoveActorsAction
 from game.scripting.handle_collisions_action import HandleCollisionsAction
 from game.scripting.draw_actors_action import DrawActorsAction
@@ -21,17 +19,19 @@ def main():
     
     # create the cast
     cast = Cast()
-    cast.add_actor("snakes", Snake())
-    cast.add_actor("cycle", Snake_2())
+    cast.add_actor("cycle_1", Cycle())
+    cycle_1 = cast.get_first_actor("cycle_1")
+    cycle_1.prepare_body(Point(50, 50), Point(constants.CELL_SIZE, 0), constants.YELLOW)
+    cast.add_actor("cycle_2", Cycle())
+    cycle_2 = cast.get_first_actor("cycle_2")
+    cycle_2.prepare_body(Point(845, 545), Point(constants.CELL_SIZE, 0), constants.RED)
     cast.add_actor("scores", Score())
-   
     # start the game
     keyboard_service = KeyboardService()
     video_service = VideoService()
 
     script = Script()
-    script.add_action("input", ControlActor1Action(keyboard_service))
-    script.add_action("input", ControlActor2Action(keyboard_service))
+    script.add_action("input", ControlActorsAction(keyboard_service))
     script.add_action("update", MoveActorsAction())
     script.add_action("update", HandleCollisionsAction())
     script.add_action("output", DrawActorsAction(video_service))
