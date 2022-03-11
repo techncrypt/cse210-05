@@ -63,16 +63,18 @@ class HandleCollisionsAction(Action):
 
         # check if cycle_2 hit cycle_1
         for segment in cycle_1_segments:
+            segment.set_color(constants.WHITE) 
             if cycle_2_head.get_position().equals(segment.get_position()):
                 self._is_game_over = True
                 self._dead_player = "cycle_2"
-
+                
         # check if cycle_1 hit cycle_2
         for segment in cycle_2_segments:
+            segment.set_color(constants.WHITE) 
             if cycle_1_head.get_position().equals(segment.get_position()):
                 self._is_game_over = True
                 self._dead_player = "cycle_1"
-
+                
     def _handle_game_over(self, cast):
         """Shows the 'game over' message if the game is over.
         
