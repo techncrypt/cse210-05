@@ -71,14 +71,14 @@ class HandleCollisionsAction(Action):
         score2 = cast.get_first_actor("score2")
         # check if cycle_2 hit cycle_1
         for segment in cycle_1_segments:
-            segment.set_color(constants.WHITE) 
+            
             if cycle_2_head.get_position().equals(segment.get_position()):
                 self._is_game_over = True
                 self._dead_player = "cycle_2"
                 score.add_points(1)
         # check if cycle_1 hit cycle_2
         for segment in cycle_2_segments:
-            segment.set_color(constants.WHITE) 
+            
             if cycle_1_head.get_position().equals(segment.get_position()):
                 self._is_game_over = True
                 self._dead_player = "cycle_1"
@@ -95,12 +95,21 @@ class HandleCollisionsAction(Action):
             x = int(constants.MAX_X / 2)
             y = int(constants.MAX_Y / 2)
             position = Point(x, y)
-
+            cycle_1 = cast.get_first_actor("cycle_1")
+            cycle_2 = cast.get_first_actor("cycle_2")
+            cycle_2_segments = cycle_2.get_segments()[1:]
+            cycle_1_segments = cycle_1.get_segments()[1:]
             message = Actor()
             if self._dead_player == "cycle_1":#first snake
                 color_winner = "Red"
+                for segment in cycle_1_segments:
+                    segment.set_color(constants.WHITE) 
+                
             elif self._dead_player == "cycle_2": #second snake
                 color_winner = "Yellow"
+                for segment in cycle_2_segments:
+                    segment.set_color(constants.WHITE) 
             message.set_text(f"Game Over! {color_winner} Wins!")
             message.set_position(position)
             cast.add_actor("messages", message)
+            
