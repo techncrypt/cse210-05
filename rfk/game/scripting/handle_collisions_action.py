@@ -3,6 +3,8 @@ from game.casting.actor import Actor
 from game.scripting.action import Action
 from game.shared.point import Point
 from game.casting.score import Score
+from game.casting.score2 import Score2
+
 
 class HandleCollisionsAction(Action):
     """
@@ -64,6 +66,7 @@ class HandleCollisionsAction(Action):
         cycle_2_head = cycle_2.get_segments()[0]
         cycle_2_segments = cycle_2.get_segments()[1:]
         score = cast.get_first_actor("scores")
+        score2 = cast.get_first_actor("score2")
         # check if cycle_2 hit cycle_1
         for segment in cycle_1_segments:
             segment.set_color(constants.WHITE) 
@@ -77,7 +80,7 @@ class HandleCollisionsAction(Action):
             if cycle_1_head.get_position().equals(segment.get_position()):
                 self._is_game_over = True
                 self._dead_player = "cycle_1"
-                score.add_points(1)
+                score2.add_points(1)
                 
     def _handle_game_over(self, cast):
         """Shows the 'game over' message if the game is over.

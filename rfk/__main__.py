@@ -3,6 +3,7 @@ import constants
 from game.casting.cast import Cast
 from game.casting.cycle import Cycle
 from game.casting.score import Score
+from game.casting.score2 import Score2
 from game.scripting.script import Script
 from game.scripting.control_actors_action import ControlActorsAction
 from game.scripting.move_actors_action import MoveActorsAction
@@ -26,6 +27,9 @@ def main():
     cycle_2 = cast.get_first_actor("cycle_2")
     cycle_2.prepare_body(Point(845, 545), Point(constants.CELL_SIZE, 0), constants.RED)
     cast.add_actor("scores", Score())
+    cast.add_actor("score2", Score2())
+   
+    
     
     # start the game
     keyboard_service = KeyboardService()
