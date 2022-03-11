@@ -86,7 +86,7 @@ class HandleCollisionsAction(Action):
             position = Point(x, y)
 
             message = Actor()
-            if self._dead_player == "cycle_1":#second snake
+            if self._dead_player == "cycle_1":#first snake
                 color_winner = "Red"
             elif self._dead_player == "cycle_2": #second snake
                 color_winner = "Yellow"
