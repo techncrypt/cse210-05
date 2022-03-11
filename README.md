@@ -1,5 +1,5 @@
-# Snake
-Snake is a clone of the classic game that we all used to play on our cellphones. You play this game 
+# Cycle
+Cycle is a clone of the classic game that we all used to play on our cellphones. You play this game 
 on a simulated terminal, with a textual interface.
 
 ## Getting Started
@@ -10,7 +10,7 @@ python3 -m pip install raylib
 ```
 After you've installed the required libraries, open a terminal and browse to the project's root folder. Start the program by running the following command.```
 
-python3 snake 
+python3 Cycle 
 ```
 You can also run the program from an IDE like Visual Studio Code. Start your IDE and open the 
 project folder. Select the main module inside the hunter folder and click the "run" icon.
@@ -20,7 +20,7 @@ project folder. Select the main module inside the hunter folder and click the "r
 The project files and folders are organized as follows:
 ```
 root                    (project root folder)
-+-- snake               (source code for game)
++-- Cycle               (source code for game)
   +-- game              (specific game classes)
   +-- __main__.py       (entry point for program)
 +-- README.md           (general info)
