@@ -26,6 +26,7 @@ def main():
     cycle_2 = cast.get_first_actor("cycle_2")
     cycle_2.prepare_body(Point(845, 545), Point(constants.CELL_SIZE, 0), constants.RED)
     cast.add_actor("scores", Score())
+    
     # start the game
     keyboard_service = KeyboardService()
     video_service = VideoService()
