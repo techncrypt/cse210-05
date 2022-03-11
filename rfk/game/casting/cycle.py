@@ -10,7 +10,7 @@ class Cycle(Actor):
     The responsibility of Snake is to move itself.
 
     Attributes:
-        _points (int): The number of points the food is worth.
+        _points (int): The number of points the killing of the cycle player dude
     """
     def __init__(self):
         super().__init__()
